@@ -1,6 +1,4 @@
-import pprint
 from typing import Any
-from sqlalchemy.orm import Session
 from fastapi import HTTPException
 from sqlalchemy.exc import SQLAlchemyError
 
@@ -219,12 +217,6 @@ def get_inventory_list(
 
 
 # ================ [ Order ] ================
-
-
-import asyncio
-from sqlalchemy.exc import SQLAlchemyError
-from fastapi import HTTPException
-from datetime import datetime
 
 async def process_order(cu: CrudUtil, order_data: schemas.OrderCreate, max_retries: int = 3):
     try:
